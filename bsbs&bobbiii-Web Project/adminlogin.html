@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        :root {
+            --text: #06010f;
+            --background: #f9f7ff;
+            --primary: #62368B;
+            --secondary: #8C3A3E;
+            --accent: #DA782D;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease;
+            min-height: 100vh; /* Make body at least full viewport height */
+            display: flex;     /* Use flexbox for layout */
+            flex-direction: column; /* Stack children vertically */
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        nav {
+            background-color: var(--secondary);
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 1.2em;
+            display: none; /* Hide navigation until logged in */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+            flex: 1;          /* Allow container to grow and push footer down */
+        }
+
+        .form-section {
+            display: none;
+            background-color: var(--primary);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        .form-section input,
+        .form-section textarea,
+        .form-section select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .form-section input[type="file"] {
+            padding: 5px;
+        }
+
+        .btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: var(--primary);
+            color: white;
+            margin-top: auto;  /* Push footer to bottom if content is short */
+        }
+
+        /* Login Form Styles */
+        .login-form {
+            display: block;
+            background-color: var(--primary);
+            padding: 30px;
+            border-radius: 5px;
+            width: 300px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .login-form button {
+            background-color: var(--accent);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: var(--secondary);
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+
+<div class="container">
+
+    <!-- Login Section -->
+    <div id="login" class="login-form">
+        <h2>Login</h2>
+        <form id="login-form" method="GET" action="adminprod.html">
+            <input type="text" id="login-username" name="username" placeholder="Username" required>
+            <input type="password" id="login-password" name="password" placeholder="Password" required>
+            <button type="submit" class="btn">Login</button>
+           
+        </form>
+    </div>
+    </div>
+    
+    <footer>
+    <p>&copy; 2025 Admin Dashboard. All rights reserved.</p>
+</footer>
+
+
+<script>
+    // Show the Admin Dashboard once logged in
+    function showDashboard() {
+        document.getElementById("login").style.display = "none";  // Hide login form
+        document.getElementById("dashboard").style.display = "block";  // Show dashboard
+        document.querySelector('nav').style.display = 'flex';  // Show navigation
+    }
+
+    // Show specific form
+    function showForm(formId) {
+        const forms = document.querySelectorAll('.form-section');
+        forms.forEach(form => form.classList.remove('active'));  // Hide all forms
+
+        const formToShow = document.getElementById(formId);
+        if (formToShow) {
+            formToShow.classList.add('active');  // Show the selected form
+        }
+    }
+
+    // On successful login, show dashboard
+    document.getElementById("login-form").onsubmit = function(event) {
+        window.location.href = "adminprod.html"; // Redirect to admin product page
+        return true;
+    }
+    
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #62368B; /* Purple */
+            --secondary-color: #DA782D; /* Orange */
+            --background-color: #f9f7ff; /* Light off-white */
+            --text-color: #06010f; /* Dark text color */
+            --highlight-color: #8C3A3E; /* Red */
+            --accent-color: #f9f7ff; /* Accent for buttons and links */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-width: 120px;
+            margin-right: 10px;
+        }
+
+        .brand-name .main-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .brand-name .sub-brand {
+            font-size: 14px;
+            color: #DA782D; /* Orange */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            display: inline-block;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .icon-bar {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .login-icon, .cart-icon {
+            font-size: 20px;
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        #cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--highlight-color);
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: var(--text-color);
+        }
+
+        .purchase {
+            background-color: var(--accent-color);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="BSBS & Bobbi Logo">
+                <div class="brand-name">
+                    <span class="main-brand">BSBS & Bobbi</span>
+                    <span class="sub-brand">PetFood Store</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="icon-bar">
+                <div class="login-icon" id="login-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <?php include 'pastpurchase.php'; ?>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 BSBS & Bobbie | <a href="privacy.html" style="color: white;">Privacy Policy</a></p>
+    </div>
+</body>
+</html>

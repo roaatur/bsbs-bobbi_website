@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product - Admin Dashboard</title>
+    <link rel="stylesheet" href="../adminprod.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .edit-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .edit-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .image-preview {
+            max-width: 200px;
+            margin: 1rem 0;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: flex-start;
+        }
+
+        .save-btn, .cancel-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .save-btn {
+            background-color: #62368B;
+            color: white;
+        }
+
+        .save-btn:hover {
+            background-color: #4a2869;
+        }
+
+        .cancel-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .cancel-btn:hover {
+            background-color: #c82333;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #28a745;
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../logo.jpg" alt="BSBS & Bobbi Logo">
+                <div class="brand-name">
+                    <span class="main-brand">BSBS & Bobbi</span>
+                    <span class="sub-brand">PetFood Store</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="edit-container">
+            <div id="success-message" class="success-message">
+                Changes saved successfully!
+            </div>
+            
+            <h2>Edit Product</h2>
+            <form id="edit-form" class="edit-form">
+                <div class="form-group">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-price">Price ($)</label>
+                    <input type="number" id="product-price" name="price" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-type">Type</label>
+                    <input type="text" id="product-type" name="type" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-flavor">Flavor</label>
+                    <input type="text" id="product-flavor" name="flavor" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-quantity">Quantity in Stock</label>
+                    <input type="number" id="product-quantity" name="quantity" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-description">Description</label>
+                    <textarea id="product-description" name="description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Current Image</label>
+                    <img id="current-image" src="" alt="Product image" class="image-preview">
+                    <label for="product-image">Upload New Image</label>
+                    <input type="file" id="product-image" name="image" accept="image/*">
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="save-btn">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                    <button type="button" class="save-btn" onclick="saveAndContinue()">
+                        <i class="fas fa-save"></i> Save and Continue
+                    </button>
+                    <button type="button" class="cancel-btn" onclick="window.location.href='../adminprod.html'">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function saveAndContinue() {
+            // Show success message
+            const successMessage = document.getElementById('success-message');
+            successMessage.style.display = 'block';
+            
+            // Hide success message after 2 seconds but don't redirect
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 2000);
+        }
+
+        document.getElementById('edit-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const successMessage = document.getElementById('success-message');
+            successMessage.style.display = 'block';
+            
+            // Hide success message after 2 seconds and redirect
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+                window.location.href = '../adminprod.html';
+            }, 2000);
+        });
+
+        // Preview uploaded image
+        document.getElementById('product-image').addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('current-image').src = e.target.result;
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+    </script>
+</body>
+</html> 

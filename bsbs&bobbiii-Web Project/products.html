@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - BSBS & Bobbi PetFood Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="BSBS & Bobbi Logo">
+                <div class="brand-name">
+                    <span class="main-brand">BSBS & Bobbi</span>
+                    <span class="sub-brand">PetFood Store</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="icon-bar">
+            <div class="login-icon" id="login-icon">
+                <i class="fas fa-user"></i>
+                
+            </div>
+            <div class="cart-icon" id="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="products-header">
+            <h1>Our Products</h1>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cat">Cat Food</button>
+                <button class="filter-btn" data-filter="dog">Dog Food</button>
+            </div>
+        </div>
+
+        <div class="products-grid">
+            <!-- Cat Food Products -->
+            <div class="product-card" data-category="cat">
+                <img src="Dry food for Adult Sterilised Cats with Salmon Hill's.png" alt="Hill's Cat Food">
+                <h3>Hill's Cat Food</h3>
+                <p class="price">$24.99</p>
+                <p class="description">Dry food for Adult Sterilised Cats with Salmon</p>
+                <a href="product-pages/hills-cat-food.html" class="view-details">View Details</a>
+            </div>
+            <div class="product-card" data-category="cat">
+                <img src="Applaws Chicken for Senior Cats.jpeg" alt="Applaws Cat Food">
+                <h3>Applaws Cat Food</h3>
+                <p class="price">$29.99</p>
+                <p class="description">Chicken for Senior Cats</p>
+                <a href="product-pages/applaws-cat-food.html" class="view-details">View Details</a>
+            </div>
+
+            <!-- Dog Food Products -->
+            <div class="product-card" data-category="dog">
+                <img src="Dry food for Puppy with Chicken 300 g Hill's.png" alt="Hill's Puppy Food">
+                <h3>Hill's Puppy Food</h3>
+                <p class="price">$19.99</p>
+                <p class="description">Dry food for Puppy with Chicken 300g</p>
+                <a href="product-pages/hills-puppy-food.html" class="view-details">View Details</a>
+            </div>
+            <div class="product-card" data-category="dog">
+                <img src="Dry Dog Food With Chicken 900g Josera Menu.jpg" alt="Josera Dog Food">
+                <h3>Josera Dog Food</h3>
+                <p class="price">$34.99</p>
+                <p class="description">Dry Dog Food With Chicken 900g</p>
+                <a href="product-pages/josera-dog-food.html" class="view-details">View Details</a>
+            </div>
+        </div>
+
+        <!-- Product Details Modal -->
+        <div id="product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="product-details">
+                    <!-- Product details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 BSBS & Bobbi PetFood Store. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

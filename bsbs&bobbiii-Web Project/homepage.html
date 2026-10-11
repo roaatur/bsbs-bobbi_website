@@ -1,0 +1,88 @@
+<!-- <?php
+$conn = new mysqli('localhost', 'root', '', 'bsbs_and_bobbi');
+$sql = "SELECT * FROM products"
+
+$result = mysqli($conn,$sql);
+> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Food Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="BSBS & Bobbi Logo">
+                <div class="brand-name">
+                    <span class="main-brand">BSBS & Bobbi</span>
+                    <span class="sub-brand">PetFood Store</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="homepage.html" class="active">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="icon-bar">
+            <div class="login-icon" id="login-icon">
+                <i class="fas fa-user"></i>
+                
+            </div>
+            <div class="cart-icon" id="cart-icon" onclick="window.location.href='cart.html'">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero-section">
+            <h1>Welcome to PetFood Store</h1>
+            <p>Quality food for your beloved pets</p>
+        </div>
+
+        <div class="products-container">
+            <div class="product-card">
+                <img src="Dry food for Adult Sterilised Cats with Salmon Hill's.png" alt="Hill's Cat Food">
+                <h3>Hill's Cat Food</h3>
+                <p class="price">$24.99</p>
+                <p class="description">Dry food for Adult Sterilised Cats with Salmon</p>
+                <a href="product-pages/hills-cat-food.html" class="view-details">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="Applaws Chicken for Senior Cats.jpeg" alt="Applaws Cat Food">
+                <h3>Applaws Cat Food</h3>
+                <p class="price">$29.99</p>
+                <p class="description">Chicken for Senior Cats</p>
+                <a href="product-pages/applaws-cat-food.html" class="view-details">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="Dry food for Puppy with Chicken 300 g Hill's.png" alt="Hill's Puppy Food">
+                <h3>Hill's Puppy Food</h3>
+                <p class="price">$19.99</p>
+                <p class="description">Dry food for Puppy with Chicken 300g</p>
+                <a href="product-pages/hills-puppy-food.html" class="view-details">View Details</a>
+            </div>
+            <div class="product-card">
+                <img src="Dry Dog Food With Chicken 900g Josera Menu.jpg" alt="Josera Dog Food">
+                <h3>Josera Dog Food</h3>
+                <p class="price">$34.99</p>
+                <p class="description">Dry Dog Food With Chicken 900g</p>
+                <a href="product-pages/josera-dog-food.html" class="view-details">View Details</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BSBS & Bobbi PetFood Store. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

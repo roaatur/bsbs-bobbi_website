@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin products - BSBS & Bobbi PetFood Store</title>
+    <link rel="stylesheet" href="adminprod.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="BSBS & Bobbi Logo">
+                <div class="brand-name">
+                    <span class="main-brand">BSBS & Bobbi</span>
+                    <span class="sub-brand">PetFood Store</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="icon-bar">
+                <div class="logout-btn" onclick="window.location.href='adminlogin.html'">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </div>
+                <div class="cart-icon" id="cart-icon" onclick="window.location.href='cart.html'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+<div class="container mt-5 mb-5">
+  <div class="d-flex justify-content-center row">
+    <div class="col-md-8">
+      <!-- Update the search bar section -->
+      <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded search-container">
+        <input
+          type="text"
+          id="search-input"
+          class="form-control border-0 gift-card"
+          placeholder="Search for products here"
+          oninput="searchProducts()"
+        />
+        <button class="btn btn-outline-success btn-sm ml-2 color" onclick="searchProducts()">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+
+      <div class="p-2">
+        <h4>You can edit products here</h4>
+        <a href="add-product.html" class="add-product-btn">
+          <i class="fas fa-plus"></i> Add New Product
+        </a>
+      </div>
+
+      <!-- Add an ID to the products container -->
+      <div id="products-container">
+        <!-- Hill's Cat Food -->
+        <div class="product-card" data-name="Hill's Cat Food" data-type="Sterilised Cats" data-price="24.99">
+          <div class="mr-1">
+            <img class="rounded" src="Dry food for Adult Sterilised Cats with Salmon Hill's.png" width="70" />
+          </div>
+          <div class="d-flex flex-column align-items-center product-details">
+            <span class="font-weight-bold">Hill's Cat Food</span>
+            <div class="d-flex flex-row product-desc">
+              <div class="size mr-1">
+                <span class="text-grey">Type:</span>
+                <span class="font-weight-bold">&nbsp;Sterilised Cats</span>
+              </div>
+              <div class="color">
+                <span class="text-grey">Flavor:</span>
+                <span class="font-weight-bold">&nbsp;Salmon</span>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row align-items-center qty">
+            <i class="fa fa-minus text-danger"></i>
+            <h5 class="text-grey mt-1 mr-1 ml-1">2</h5>
+            <i class="fa fa-plus text-success"></i>
+          </div>
+          <div>
+            <h5 class="text-grey">$24.99</h5>
+          </div>
+          <div class="d-flex align-items-center">
+            <a href="edit-pages/edit-hills-cat.html" class="edit-btn">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+            <i class="fa fa-trash mb-1 text-danger"></i>
+          </div>
+        </div>
+
+        <!-- Applaws Cat Food -->
+        <div class="product-card" data-name="Applaws Cat Food" data-type="Senior Cats" data-price="29.99">
+          <div class="mr-1">
+            <img class="rounded" src="Applaws Chicken for Senior Cats.jpeg" width="70" />
+          </div>
+          <div class="d-flex flex-column align-items-center product-details">
+            <span class="font-weight-bold">Applaws Cat Food</span>
+            <div class="d-flex flex-row product-desc">
+              <div class="size mr-1">
+                <span class="text-grey">Type:</span>
+                <span class="font-weight-bold">&nbsp;Senior Cats</span>
+              </div>
+              <div class="color">
+                <span class="text-grey">Flavor:</span>
+                <span class="font-weight-bold">&nbsp;Chicken</span>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row align-items-center qty">
+            <i class="fa fa-minus text-danger"></i>
+            <h5 class="text-grey mt-1 mr-1 ml-1">2</h5>
+            <i class="fa fa-plus text-success"></i>
+          </div>
+          <div>
+            <h5 class="text-grey">$29.99</h5>
+          </div>
+          <div class="d-flex align-items-center">
+            <a href="edit-pages/edit-applaws-cat.html" class="edit-btn">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+            <i class="fa fa-trash mb-1 text-danger"></i>
+          </div>
+        </div>
+
+        <!-- Hill's Puppy Food -->
+        <div class="product-card" data-name="Hill's Puppy Food" data-type="Puppy" data-price="19.99">
+          <div class="mr-1">
+            <img class="rounded" src="Dry food for Puppy with Chicken 300 g Hill's.png" width="70" />
+          </div>
+          <div class="d-flex flex-column align-items-center product-details">
+            <span class="font-weight-bold">Hill's Puppy Food</span>
+            <div class="d-flex flex-row product-desc">
+              <div class="size mr-1">
+                <span class="text-grey">Type:</span>
+                <span class="font-weight-bold">&nbsp;Puppy</span>
+              </div>
+              <div class="color">
+                <span class="text-grey">Flavor:</span>
+                <span class="font-weight-bold">&nbsp;Chicken</span>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row align-items-center qty">
+            <i class="fa fa-minus text-danger"></i>
+            <h5 class="text-grey mt-1 mr-1 ml-1">2</h5>
+            <i class="fa fa-plus text-success"></i>
+          </div>
+          <div>
+            <h5 class="text-grey">$19.99</h5>
+          </div>
+          <div class="d-flex align-items-center">
+            <a href="edit-pages/edit-hills-puppy.html" class="edit-btn">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+            <i class="fa fa-trash mb-1 text-danger"></i>
+          </div>
+        </div>
+
+        <!-- Josera Dog Food -->
+        <div class="product-card" data-name="Josera Dog Food" data-type="Dog" data-price="34.99">
+          <div class="mr-1">
+            <img class="rounded" src="Dry Dog Food With Chicken 900g Josera Menu.jpg" width="70" />
+          </div>
+          <div class="d-flex flex-column align-items-center product-details">
+            <span class="font-weight-bold">Josera Dog Food</span>
+            <div class="d-flex flex-row product-desc">
+              <div class="size mr-1">
+                <span class="text-grey">Weight:</span>
+                <span class="font-weight-bold">&nbsp;900g</span>
+              </div>
+              <div class="color">
+                <span class="text-grey">Flavor:</span>
+                <span class="font-weight-bold">&nbsp;Chicken</span>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row align-items-center qty">
+            <i class="fa fa-minus text-danger"></i>
+            <h5 class="text-grey mt-1 mr-1 ml-1">2</h5>
+            <i class="fa fa-plus text-success"></i>
+          </div>
+          <div>
+            <h5 class="text-grey">$34.99</h5>
+          </div>
+          <div class="d-flex align-items-center">
+            <a href="edit-pages/edit-josera-dog.html" class="edit-btn">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+            <i class="fa fa-trash mb-1 text-danger"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer>
+        <p>&copy; 2025 BSBS & Bobbi PetFood Store. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
